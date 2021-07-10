@@ -64,7 +64,9 @@ enum streaming_component_type {
   SCT_THEORA,
   SCT_OPUS,
   SCT_FLAC,
-  SCT_LAST = SCT_FLAC
+  SCT_DSMCC,   /* Digital storage media command and control - mpeg-ts stream-type 0x0b */
+  SCT_RDS,     /* Radio data system, mpeg-ts stream type 0x89 */
+  SCT_LAST = SCT_RDS
 };
 
 #define SCT_MASK(t) (1 << (t))

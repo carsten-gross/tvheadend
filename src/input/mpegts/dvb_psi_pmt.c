@@ -340,6 +340,11 @@ dvb_psi_parse_pmt
         hts_stream_type = SCT_AC3;
       break;
 
+	case 0x0b:
+	  /* This is a data carousel. It is used to transmit still images */
+	  hts_stream_type = SCT_DSMCC;
+	  break;
+
     case 0x0f:
       hts_stream_type = SCT_MP4A;
       break;
@@ -367,6 +372,10 @@ dvb_psi_parse_pmt
     case 0x87:	/* ATSC */
       hts_stream_type = SCT_EAC3;
       break;
+
+	case 0x89:	/* Used for RDS in AAC audio */
+	  hts_stream_type = SCT_RDS;
+	  break;
 
     default:
       break;
